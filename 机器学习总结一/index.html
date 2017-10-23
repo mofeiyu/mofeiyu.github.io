@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="机器学习," />
 
 
 
@@ -84,12 +84,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="mofeiyu">
-<meta property="og:url" content="mofeiyu.github.io/index.html">
+<meta name="description" content="标签 K-近邻算法 决策树  K-近邻算法特点 优点：精度高、对异常值不敏感、无数据输入假定  缺点：计算复杂度高、空间复杂度高  适用数据范围：数值型(连续)和标称型(离散)   算法思想 分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；  按照距离的大小进行排序，在m中选取距离最小的K个点；  确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签类别。">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习总结一">
+<meta property="og:url" content="mofeiyu.github.io/机器学习总结一/index.html">
 <meta property="og:site_name" content="mofeiyu">
+<meta property="og:description" content="标签 K-近邻算法 决策树  K-近邻算法特点 优点：精度高、对异常值不敏感、无数据输入假定  缺点：计算复杂度高、空间复杂度高  适用数据范围：数值型(连续)和标称型(离散)   算法思想 分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；  按照距离的大小进行排序，在m中选取距离最小的K个点；  确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签类别。">
+<meta property="og:updated_time" content="2017-10-23T16:06:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mofeiyu">
+<meta name="twitter:title" content="机器学习总结一">
+<meta name="twitter:description" content="标签 K-近邻算法 决策树  K-近邻算法特点 优点：精度高、对异常值不敏感、无数据输入假定  缺点：计算复杂度高、空间复杂度高  适用数据范围：数值型(连续)和标称型(离散)   算法思想 分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；  按照距离的大小进行排序，在m中选取距离最小的K个点；  确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签类别。">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="mofeiyu.github.io/"/>
+  <link rel="canonical" href="mofeiyu.github.io/机器学习总结一/"/>
 
 
 
 
 
-  <title> mofeiyu </title>
+  <title> 机器学习总结一 | mofeiyu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -144,9 +149,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,9 +230,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -262,10 +265,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/机器学习总结一/" itemprop="url">
-                  机器学习总结一
-                </a>
+                机器学习总结一
               
             
           </h1>
@@ -326,9 +326,7 @@
       
 
       
-        
-          
-            <h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
+        <h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
 <li><a href="#k-近邻算法">K-近邻算法</a></li>
 <li><a href="#决策树">决策树</a></li>
 </ul>
@@ -411,37 +409,46 @@
 </li>
 </ul>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
       
 
       
+
       
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -449,6 +456,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -468,8 +486,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -529,6 +556,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-近邻算法"><span class="nav-number">2.</span> <span class="nav-text">K-近邻算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想"><span class="nav-number">2.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#距离计算方法"><span class="nav-number">2.3.</span> <span class="nav-text">距离计算方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归一化特征值"><span class="nav-number">2.4.</span> <span class="nav-text">归一化特征值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树"><span class="nav-number">3.</span> <span class="nav-text">决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">3.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想-1"><span class="nav-number">3.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息增益"><span class="nav-number">3.3.</span> <span class="nav-text">信息增益</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#熵"><span class="nav-number">3.3.1.</span> <span class="nav-text">熵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息增益-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">信息增益</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -628,6 +671,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
@@ -644,9 +691,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'mofeiyu';
-      var disqus_identifier = 'index.html';
+      var disqus_identifier = '机器学习总结一/';
 
-      var disqus_title = "";
+      var disqus_title = "机器学习总结一";
 
 
       function run_disqus_script(disqus_script) {
@@ -659,6 +706,13 @@
 
       run_disqus_script('count.js');
 
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
       
 
     </script>
