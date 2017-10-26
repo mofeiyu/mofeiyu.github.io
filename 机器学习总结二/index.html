@@ -91,7 +91,7 @@
 <meta property="og:url" content="mofeiyu.github.io/机器学习总结二/index.html">
 <meta property="og:site_name" content="mofeiyu">
 <meta property="og:description" content="标签 朴素贝叶斯 AdaBoost K—均值  1. 算法三：朴素贝叶斯1.1. 特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   1.2. 算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用">
-<meta property="og:updated_time" content="2017-10-26T16:31:18.000Z">
+<meta property="og:updated_time" content="2017-10-26T16:33:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结二">
 <meta name="twitter:description" content="标签 朴素贝叶斯 AdaBoost K—均值  1. 算法三：朴素贝叶斯1.1. 特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   1.2. 算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用">
@@ -462,7 +462,7 @@
 </li>
 </ol>
 <ul>
-<li>k—均值收敛到局部最小值：先将具有最大误差平方和(SSE, 簇中每个各个特征到质心的距离的平方之和的总和)的簇划分为两个簇。接着合并其它簇中最近的两个质心，或者合并两个使得总的SSE增幅最小的质心</li>
+<li>若k—均值收敛到局部最小值：先将具有最大误差平方和(SSE, 簇中每个各个特征到质心的距离的平方之和的总和)的簇划分为两个簇。接着合并其它簇中最近的两个质心，或者合并两个使得总的SSE增幅最小的质心</li>
 </ul>
 <h3 id="3-3-二分k-均值"><a href="#3-3-二分k-均值" class="headerlink" title="3.3. 二分k-均值"></a>3.3. 二分k-均值</h3><ul>
 <li><p>方法1：将所有点看成一个簇，将其进行二均值聚类得到两个簇。选择当前SSE最大的簇进行二分，直到簇数目为k。</p>
