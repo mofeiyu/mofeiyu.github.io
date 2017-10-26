@@ -356,9 +356,10 @@
 </li>
 </ol>
 <ul>
-<li>拉普拉斯平滑</li>
+<li><p>拉普拉斯平滑</p>
+<p>  在计算过程中，有可能出现概率值为0的情况。为避免这种情况，在一开始训练集记录前每个特征的每种特征值计数初始值为1。即在步骤2，3中几率过程分子和分母都分别加上一个常数。</p>
+</li>
 </ul>
-<p>在计算过程中，有可能出现概率值为0的情况。为避免这种情况，在一开始训练集记录前每个特征的每种特征值计数初始值为1。即在步骤2，3中几率过程分子和分母都分别加上一个常数。</p>
 <h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><ul>
 <li><p>符号：</p>
 <p>  P(A)：发生事件A的概率</p>
@@ -396,7 +397,7 @@
 <li><p>适用数据范围：数值型和标称</p>
 </li>
 </ul>
-<h3 id="boosting"><a href="#boosting" class="headerlink" title="boosting"></a>boosting</h3><h4 id="自举汇聚法"><a href="#自举汇聚法" class="headerlink" title="自举汇聚法"></a>自举汇聚法</h4><p>自举汇聚法(bootstrap aggregating)也称bagging方法</p>
+<h3 id="boosting"><a href="#boosting" class="headerlink" title="boosting"></a>boosting</h3><h4 id="自举汇聚法"><a href="#自举汇聚法" class="headerlink" title="自举汇聚法"></a>自举汇聚法</h4><p>自举汇聚法(bootstrap aggregating)也称bagging方法，思想如下：</p>
 <ol>
 <li><p>从原始数据集选择S次得到S个新数据集的技术。每个数据集大小相等，都是通过在原始数据集中随机选择一个样本来进行替换而得到的。</p>
 </li>
@@ -405,7 +406,7 @@
 <li><p>用S个分类器分别预测测试数据的类别，取被预测最多的类别作为该数据的预测类别。</p>
 </li>
 </ol>
-<h4 id="boosting-1"><a href="#boosting-1" class="headerlink" title="boosting"></a>boosting</h4><p>boosting技术类似于bagging技术，但boosting中每个分类器和新数据集的产生不是并行的，每个分类器的权重也不尽相同。</p>
+<h4 id="boosting-1"><a href="#boosting-1" class="headerlink" title="boosting"></a>boosting</h4><p>boosting技术类似于bagging技术，但boosting中每个分类器和新数据集的产生不是并行的，每个分类器的权重也不尽相同。思想如下：</p>
 <ol>
 <li><p>为整个过程设置分类器的个数,并为训练集每个数据设置相同的权重值$D_i^j$(第i个数据在第j次分类器的数据中的权重，此时j = 0)</p>
 </li>
@@ -471,9 +472,9 @@
 </li>
 </ul>
 <h3 id="二分k-均值"><a href="#二分k-均值" class="headerlink" title="二分k-均值"></a>二分k-均值</h3><ul>
-<li><p>方法1： 将所有点看成一个簇，将其进行2均值聚类得到两个簇。选择当前SSE最大的簇进行2分，直到簇数目为k。</p>
+<li><p>方法1：<br>  将所有点看成一个簇，将其进行2均值聚类得到两个簇。选择当前SSE最大的簇进行2分，直到簇数目为k。</p>
 </li>
-<li><p>方法2： 进将所有点看成一个簇，将其进行2均值聚类得到两个簇。选择当前2分后使得总的SSE最小的簇进行2分，直到簇数目为k。</p>
+<li><p>方法2：<br>  进将所有点看成一个簇，将其进行2均值聚类得到两个簇。选择当前2分后使得总的SSE最小的簇进行2分，直到簇数目为k。</p>
 </li>
 </ul>
 
