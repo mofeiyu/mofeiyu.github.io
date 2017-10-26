@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="标签 朴素贝叶斯 AdaBoost K—均值  1. 算法三：朴素贝叶斯1.1. 特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   1.2. 算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用">
+<meta name="description" content="标签 朴素贝叶斯 AdaBoost K—均值  1. 算法三：朴素贝叶斯1.1. 特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   1.2. 算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习总结二">
 <meta property="og:url" content="mofeiyu.github.io/机器学习总结二/index.html">
 <meta property="og:site_name" content="mofeiyu">
-<meta property="og:description" content="标签 朴素贝叶斯 AdaBoost K—均值  1. 算法三：朴素贝叶斯1.1. 特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   1.2. 算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用">
-<meta property="og:updated_time" content="2017-10-26T15:46:44.000Z">
+<meta property="og:description" content="标签 朴素贝叶斯 AdaBoost K—均值  1. 算法三：朴素贝叶斯1.1. 特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   1.2. 算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率">
+<meta property="og:updated_time" content="2017-10-26T16:00:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结二">
-<meta name="twitter:description" content="标签 朴素贝叶斯 AdaBoost K—均值  1. 算法三：朴素贝叶斯1.1. 特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   1.2. 算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用">
+<meta name="twitter:description" content="标签 朴素贝叶斯 AdaBoost K—均值  1. 算法三：朴素贝叶斯1.1. 特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   1.2. 算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率">
 
 
 
@@ -346,6 +346,9 @@
 </li>
 <li><p>记录不同类别中各个特征的各种特征值在该类别的概率</p>
 </li>
+</ol>
+<a id="more"></a>
+<ol>
 <li><p>利用3中数据计算待测样品(x,y)在各类别中出现的概率$P(x,y|C_i)$；利用2中数据计算待测样品(x,y)出现的概率P(x,y)</p>
 </li>
 <li><p>根据用贝叶斯准则计算出各个类别在待测样品中出现的概率$P(C_i|x,y)$</p>
@@ -365,9 +368,10 @@
 <p>  P(A,B)：即发生事件B又发生事件A的概率</p>
 </li>
 <li><p>贝叶斯准则：</p>
-<p>  -前提条件：各事件之间独立，则概率互不影响。</p>
-<p>  $$ P(A|B) = \frac{P(B|A)P(A)}{P(B)} $$</p>
 <ul>
+<li><p>前提条件：各事件之间独立，则概率互不影响。</p>
+<p>$$ P(A|B) = \frac{P(B|A)P(A)}{P(B)} $$</p>
+</li>
 <li><p>例子说明：</p>
 <p>一堆球有红色和绿色，又有大球和小球，其中球的大小和颜色无关</p>
 <p>  P(红)：红球在全部中的概率；</p>
@@ -395,7 +399,7 @@
 <li><p>适用数据范围：数值型和标称</p>
 </li>
 </ul>
-<h3 id="2-2-boosting"><a href="#2-2-boosting" class="headerlink" title="2.2. boosting"></a>2.2. boosting</h3><h4 id="自举汇聚法"><a href="#自举汇聚法" class="headerlink" title="自举汇聚法"></a>自举汇聚法</h4><p>自举汇聚法(bootstrap aggregating)也称bagging方法，思想如下：</p>
+<h3 id="2-2-boosting"><a href="#2-2-boosting" class="headerlink" title="2.2. boosting"></a>2.2. boosting</h3><h4 id="2-2-1-自举汇聚法"><a href="#2-2-1-自举汇聚法" class="headerlink" title="2.2.1. 自举汇聚法"></a>2.2.1. 自举汇聚法</h4><p>自举汇聚法(bootstrap aggregating)也称bagging方法，思想如下：</p>
 <ol>
 <li><p>从原始数据集选择S次得到S个新数据集的技术。每个数据集大小相等，都是通过在原始数据集中随机选择一个样本来进行替换而得到的。</p>
 </li>
@@ -404,7 +408,7 @@
 <li><p>用S个分类器分别预测测试数据的类别，取被预测最多的类别作为该数据的预测类别。</p>
 </li>
 </ol>
-<h4 id="boosting"><a href="#boosting" class="headerlink" title="boosting"></a>boosting</h4><p>boosting技术类似于bagging技术，但boosting中每个分类器和新数据集的产生不是并行的，每个分类器的权重也不尽相同。思想如下：</p>
+<h4 id="2-2-2-boosting"><a href="#2-2-2-boosting" class="headerlink" title="2.2.2. boosting"></a>2.2.2. boosting</h4><p>boosting技术类似于bagging技术，但boosting中每个分类器和新数据集的产生不是并行的，每个分类器的权重也不尽相同。思想如下：</p>
 <ol>
 <li><p>为整个过程设置分类器的个数,并为训练集每个数据设置相同的权重值$D_i^j$(第i个数据在第j次分类器的数据中的权重，此时j = 0)</p>
 </li>
@@ -649,7 +653,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-算法三：朴素贝叶斯"><span class="nav-text">1. 算法三：朴素贝叶斯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-特点"><span class="nav-text">1.1. 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-算法思想"><span class="nav-text">1.2. 算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-条件概率"><span class="nav-text">1.3. 条件概率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-算法四：AdaBoost"><span class="nav-text">2. 算法四：AdaBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-特点"><span class="nav-text">2.1. 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-boosting"><span class="nav-text">2.2. boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自举汇聚法"><span class="nav-text">自举汇聚法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boosting"><span class="nav-text">boosting</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-adaboosting"><span class="nav-text">2.3. adaboosting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-算法五：K—均值"><span class="nav-text">3. 算法五：K—均值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-特点"><span class="nav-text">3.1. 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-算法思想"><span class="nav-text">3.2. 算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-二分k-均值"><span class="nav-text">3.3. 二分k-均值</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-算法三：朴素贝叶斯"><span class="nav-text">1. 算法三：朴素贝叶斯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-特点"><span class="nav-text">1.1. 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-算法思想"><span class="nav-text">1.2. 算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-条件概率"><span class="nav-text">1.3. 条件概率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-算法四：AdaBoost"><span class="nav-text">2. 算法四：AdaBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-特点"><span class="nav-text">2.1. 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-boosting"><span class="nav-text">2.2. boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-自举汇聚法"><span class="nav-text">2.2.1. 自举汇聚法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-boosting"><span class="nav-text">2.2.2. boosting</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-adaboosting"><span class="nav-text">2.3. adaboosting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-算法五：K—均值"><span class="nav-text">3. 算法五：K—均值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-特点"><span class="nav-text">3.1. 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-算法思想"><span class="nav-text">3.2. 算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-二分k-均值"><span class="nav-text">3.3. 二分k-均值</span></a></li></ol></li></ol></div>
             
 
           </div>
