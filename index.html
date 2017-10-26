@@ -333,7 +333,7 @@
 <li><a href="#算法四：AdaBoost">AdaBoost</a></li>
 <li><a href="#算法五：K—均值">K—均值</a></li>
 </ul>
-<h2 id="算法三：朴素贝叶斯"><a href="#算法三：朴素贝叶斯" class="headerlink" title="算法三：朴素贝叶斯"></a>算法三：朴素贝叶斯</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="1-算法三：朴素贝叶斯"><a href="#1-算法三：朴素贝叶斯" class="headerlink" title="1. 算法三：朴素贝叶斯"></a>1. 算法三：朴素贝叶斯</h2><h3 id="1-1-特点"><a href="#1-1-特点" class="headerlink" title="1.1. 特点"></a>1.1. 特点</h3><ul>
 <li><p>优点：在数据较少的情况仍有效，可以处理多分类问题</p>
 </li>
 <li><p>缺点：对输入数据的准备方式较为敏感</p>
@@ -341,7 +341,7 @@
 <li><p>适用数据范围：标称型（且特征条件独立）</p>
 </li>
 </ul>
-<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><ol>
+<h3 id="1-2-算法思想"><a href="#1-2-算法思想" class="headerlink" title="1.2. 算法思想"></a>1.2. 算法思想</h3><ol>
 <li><p>记录训练集中各种类别的概率$P(C_i)$</p>
 </li>
 <li><p>记录训练集中出现的各个特征的各种特征值的占全部的概率</p>
@@ -360,7 +360,7 @@
 <p>  在计算过程中，有可能出现概率值为0的情况。为避免这种情况，在一开始训练集记录前每个特征的每种特征值计数初始值为1。即在步骤2，3中几率过程分子和分母都分别加上一个常数。</p>
 </li>
 </ul>
-<h3 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h3><ul>
+<h3 id="1-3-条件概率"><a href="#1-3-条件概率" class="headerlink" title="1.3. 条件概率"></a>1.3. 条件概率</h3><ul>
 <li><p>符号：</p>
 <p>  P(A)：发生事件A的概率</p>
 <p>  P(A|B)：在事件B发生下事件A的概率</p>
@@ -389,7 +389,7 @@
 <p>  若$P(C_k|x,y)$满足 $P(C_k|x,y) &gt; P(C_m|x,y) (m ∈ i,m ≠ k)$ 那么数据(x,y)属于$C_k$这一类别</p>
 </li>
 </ul>
-<h2 id="算法四：AdaBoost"><a href="#算法四：AdaBoost" class="headerlink" title="算法四：AdaBoost"></a>算法四：AdaBoost</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="2-算法四：AdaBoost"><a href="#2-算法四：AdaBoost" class="headerlink" title="2. 算法四：AdaBoost"></a>2. 算法四：AdaBoost</h2><h3 id="2-1-特点"><a href="#2-1-特点" class="headerlink" title="2.1. 特点"></a>2.1. 特点</h3><ul>
 <li><p>优点：泛化错误率低，易编码，可以应用在大部分分类器上，无参数调整</p>
 </li>
 <li><p>缺点：对离群点敏感</p>
@@ -397,7 +397,7 @@
 <li><p>适用数据范围：数值型和标称</p>
 </li>
 </ul>
-<h3 id="boosting"><a href="#boosting" class="headerlink" title="boosting"></a>boosting</h3><h4 id="自举汇聚法"><a href="#自举汇聚法" class="headerlink" title="自举汇聚法"></a>自举汇聚法</h4><p>自举汇聚法(bootstrap aggregating)也称bagging方法，思想如下：</p>
+<h3 id="2-2-boosting"><a href="#2-2-boosting" class="headerlink" title="2.2. boosting"></a>2.2. boosting</h3><h4 id="自举汇聚法"><a href="#自举汇聚法" class="headerlink" title="自举汇聚法"></a>自举汇聚法</h4><p>自举汇聚法(bootstrap aggregating)也称bagging方法，思想如下：</p>
 <ol>
 <li><p>从原始数据集选择S次得到S个新数据集的技术。每个数据集大小相等，都是通过在原始数据集中随机选择一个样本来进行替换而得到的。</p>
 </li>
@@ -406,7 +406,7 @@
 <li><p>用S个分类器分别预测测试数据的类别，取被预测最多的类别作为该数据的预测类别。</p>
 </li>
 </ol>
-<h4 id="boosting-1"><a href="#boosting-1" class="headerlink" title="boosting"></a>boosting</h4><p>boosting技术类似于bagging技术，但boosting中每个分类器和新数据集的产生不是并行的，每个分类器的权重也不尽相同。思想如下：</p>
+<h4 id="boosting"><a href="#boosting" class="headerlink" title="boosting"></a>boosting</h4><p>boosting技术类似于bagging技术，但boosting中每个分类器和新数据集的产生不是并行的，每个分类器的权重也不尽相同。思想如下：</p>
 <ol>
 <li><p>为整个过程设置分类器的个数,并为训练集每个数据设置相同的权重值$D_i^j$(第i个数据在第j次分类器的数据中的权重，此时j = 0)</p>
 </li>
@@ -418,7 +418,7 @@
 </li>
 </ol>
 <p>不同的boosting算法取决于其更改训练集数据权重方法，以及分类器权重的计算方法的不同。</p>
-<h3 id="adaboosting"><a href="#adaboosting" class="headerlink" title="adaboosting"></a>adaboosting</h3><p>adaboosting是boosting的一种。</p>
+<h3 id="2-3-adaboosting"><a href="#2-3-adaboosting" class="headerlink" title="2.3. adaboosting"></a>2.3. adaboosting</h3><p>adaboosting是boosting的一种。</p>
 <ul>
 <li><p>权重错误: $ D_\varepsilon = Sum(D_i), i属于为训练集中被错分的样品的序号的集合$</p>
 </li>
@@ -439,7 +439,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="算法五：K—均值"><a href="#算法五：K—均值" class="headerlink" title="算法五：K—均值"></a>算法五：K—均值</h2><h3 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="3-算法五：K—均值"><a href="#3-算法五：K—均值" class="headerlink" title="3. 算法五：K—均值"></a>3. 算法五：K—均值</h2><h3 id="3-1-特点"><a href="#3-1-特点" class="headerlink" title="3.1. 特点"></a>3.1. 特点</h3><ul>
 <li><p>优点：容易实现</p>
 </li>
 <li><p>缺点：可能收敛到局部最小值，在大规模数据中收敛慢较慢</p>
@@ -449,7 +449,7 @@
 <li><p>类别：无监督学习</p>
 </li>
 </ul>
-<h3 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h3><ol>
+<h3 id="3-2-算法思想"><a href="#3-2-算法思想" class="headerlink" title="3.2. 算法思想"></a>3.2. 算法思想</h3><ol>
 <li><p>设置簇的数目，创建k个点作为起始质心（一般随机选择）</p>
 </li>
 <li><p>训练集中每一个点都分别计算与k个质心的距离</p>
@@ -471,7 +471,7 @@
 </ol>
 </li>
 </ul>
-<h3 id="二分k-均值"><a href="#二分k-均值" class="headerlink" title="二分k-均值"></a>二分k-均值</h3><ul>
+<h3 id="3-3-二分k-均值"><a href="#3-3-二分k-均值" class="headerlink" title="3.3. 二分k-均值"></a>3.3. 二分k-均值</h3><ul>
 <li><p>方法1：<br>  将所有点看成一个簇，将其进行2均值聚类得到两个簇。选择当前SSE最大的簇进行2分，直到簇数目为k。</p>
 </li>
 <li><p>方法2：<br>  进将所有点看成一个簇，将其进行2均值聚类得到两个簇。选择当前2分后使得总的SSE最小的簇进行2分，直到簇数目为k。</p>
@@ -609,7 +609,7 @@
 <li><a href="#算法一：k-近邻算法">K-近邻算法</a></li>
 <li><a href="#算法二：决策树">决策树</a></li>
 </ul>
-<h2 id="算法一：K-近邻算法"><a href="#算法一：K-近邻算法" class="headerlink" title="算法一：K-近邻算法"></a>算法一：K-近邻算法</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="1-算法一：K-近邻算法"><a href="#1-算法一：K-近邻算法" class="headerlink" title="1. 算法一：K-近邻算法"></a>1. 算法一：K-近邻算法</h2><h3 id="1-1-特点"><a href="#1-1-特点" class="headerlink" title="1.1. 特点"></a>1.1. 特点</h3><ul>
 <li><p>优点：精度高、对异常值不敏感、无数据输入假定</p>
 </li>
 <li><p>缺点：计算复杂度高、空间复杂度高</p>
@@ -617,7 +617,7 @@
 <li><p>适用数据范围：数值型(连续)和标称型(离散)</p>
 </li>
 </ul>
-<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><ol>
+<h3 id="1-2-算法思想"><a href="#1-2-算法思想" class="headerlink" title="1.2. 算法思想"></a>1.2. 算法思想</h3><ol>
 <li><p>分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；</p>
 </li>
 <li><p>按照距离的大小进行排序，在m中选取距离最小的K个点；</p>
@@ -625,20 +625,20 @@
 <li><p>确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签类别。</p>
 </li>
 </ol>
-<h3 id="距离计算方法"><a href="#距离计算方法" class="headerlink" title="距离计算方法"></a>距离计算方法</h3><p>一般使用曼哈顿距离或欧式距离（计算距离前可先归一化数值；计算距离时可为每个特征设定权重）</p>
+<h3 id="1-3-距离计算方法"><a href="#1-3-距离计算方法" class="headerlink" title="1.3. 距离计算方法"></a>1.3. 距离计算方法</h3><p>一般使用曼哈顿距离或欧式距离（计算距离前可先归一化数值；计算距离时可为每个特征设定权重）</p>
 <ul>
 <li><p>曼哈顿距离： $d(x,y)=\sqrt{\sum_{k=1}^{n}|x_k - y_k|}$</p>
 </li>
 <li><p>欧式距离： $d(x,y)=\sqrt{\sum_{k=1}^{n}(x_k - y_k)^2}$</p>
 </li>
 </ul>
-<h3 id="归一化特征值"><a href="#归一化特征值" class="headerlink" title="归一化特征值"></a>归一化特征值</h3><ul>
+<h3 id="1-4-归一化特征值"><a href="#1-4-归一化特征值" class="headerlink" title="1.4. 归一化特征值"></a>1.4. 归一化特征值</h3><ul>
 <li><p>归一化至[0,1]: $ X = \frac{X - min}{max - min}$</p>
 </li>
 <li><p>归一化至[-1,1]: $ X = 2\frac{X - min}{max - min} - 1$</p>
 </li>
 </ul>
-<h2 id="算法二：决策树"><a href="#算法二：决策树" class="headerlink" title="算法二：决策树"></a>算法二：决策树</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="2-算法二：决策树"><a href="#2-算法二：决策树" class="headerlink" title="2. 算法二：决策树"></a>2. 算法二：决策树</h2><h3 id="2-1-特点"><a href="#2-1-特点" class="headerlink" title="2.1. 特点"></a>2.1. 特点</h3><ul>
 <li><p>优点：计算复杂度不高，对中间缺失值不敏感，可以处理不相关特征数字</p>
 </li>
 <li><p>缺点：可能会产生过度匹配问题</p>
@@ -646,7 +646,7 @@
 <li><p>适用数据范围：数值型和标称型</p>
 </li>
 </ul>
-<h3 id="算法思想-1"><a href="#算法思想-1" class="headerlink" title="算法思想"></a>算法思想</h3><ol>
+<h3 id="2-2-算法思想"><a href="#2-2-算法思想" class="headerlink" title="2.2. 算法思想"></a>2.2. 算法思想</h3><ol>
 <li><p>在一堆特征中选取出最佳分配特征(信息增益最高的特征)将样本分为k堆(k为最佳分配特征的该特征类别数)，并不再将该特征列入待分特征中，而该特征将作为一个分类特征节点。</p>
 </li>
 <li><p>在k堆中的每一堆重复操作1,直至该堆样品全是一类别标签则将这堆作为该标签子叶，或者该堆样品已经遍历完所有划分数据集的特征，则采用多数表决法决定该子叶的分类（即返回出现次数最多的分类名称）</p>
@@ -654,7 +654,7 @@
 <li><p>决策过程需要从决策树的根节点开始，待测数据与决策树中的特征节点进行比较，并按照比较结果选择下一比较分支，直到叶子节点作为最终的决策结果。</p>
 </li>
 </ol>
-<h3 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h3><h4 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h4><ul>
+<h3 id="2-3-信息增益"><a href="#2-3-信息增益" class="headerlink" title="2.3. 信息增益"></a>2.3. 信息增益</h3><h4 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h4><ul>
 <li><p>熵：信息的期待值。</p>
 </li>
 <li><p>符号：H</p>
@@ -673,7 +673,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="信息增益-1"><a href="#信息增益-1" class="headerlink" title="信息增益"></a>信息增益</h4><ul>
+<h4 id="2-4-信息增益"><a href="#2-4-信息增益" class="headerlink" title="2.4. 信息增益"></a>2.4. 信息增益</h4><ul>
 <li><p>符号：△H </p>
 </li>
 <li><p>计算：</p>
