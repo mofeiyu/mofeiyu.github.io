@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="标签 朴素贝叶斯 AdaBoost K—均值  朴素贝叶斯特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用3中数据计算待测样品(x,y)在各">
+<meta name="description" content="标签 朴素贝叶斯 AdaBoost K—均值  算法三：朴素贝叶斯特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用3中数据计算待测样品(x,">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习总结二">
 <meta property="og:url" content="mofeiyu.github.io/机器学习总结二/index.html">
 <meta property="og:site_name" content="mofeiyu">
-<meta property="og:description" content="标签 朴素贝叶斯 AdaBoost K—均值  朴素贝叶斯特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用3中数据计算待测样品(x,y)在各">
-<meta property="og:updated_time" content="2017-10-26T15:24:46.000Z">
+<meta property="og:description" content="标签 朴素贝叶斯 AdaBoost K—均值  算法三：朴素贝叶斯特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用3中数据计算待测样品(x,">
+<meta property="og:updated_time" content="2017-10-26T15:27:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结二">
-<meta name="twitter:description" content="标签 朴素贝叶斯 AdaBoost K—均值  朴素贝叶斯特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用3中数据计算待测样品(x,y)在各">
+<meta name="twitter:description" content="标签 朴素贝叶斯 AdaBoost K—均值  算法三：朴素贝叶斯特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用3中数据计算待测样品(x,">
 
 
 
@@ -327,11 +327,11 @@
 
       
         <h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
-<li><a href="#朴素贝叶斯">朴素贝叶斯</a></li>
-<li><a href="#AdaBoost">AdaBoost</a></li>
-<li><a href="#K—均值">K—均值</a></li>
+<li><a href="#算法三：朴素贝叶斯">朴素贝叶斯</a></li>
+<li><a href="#算法四：AdaBoost">AdaBoost</a></li>
+<li><a href="#算法五：K—均值">K—均值</a></li>
 </ul>
-<h2 id="朴素贝叶斯"><a href="#朴素贝叶斯" class="headerlink" title="朴素贝叶斯"></a>朴素贝叶斯</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="算法三：朴素贝叶斯"><a href="#算法三：朴素贝叶斯" class="headerlink" title="算法三：朴素贝叶斯"></a>算法三：朴素贝叶斯</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
 <li><p>优点：在数据较少的情况仍有效，可以处理多分类问题</p>
 </li>
 <li><p>缺点：对输入数据的准备方式较为敏感</p>
@@ -387,7 +387,7 @@
 <p>  若$P(C_k|x,y)$满足 $P(C_k|x,y) &gt; P(C_m|x,y) (m ∈ i,m ≠ k)$ 那么数据(x,y)属于$C_k$这一类别</p>
 </li>
 </ul>
-<h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="算法四：AdaBoost"><a href="#算法四：AdaBoost" class="headerlink" title="算法四：AdaBoost"></a>算法四：AdaBoost</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
 <li><p>优点：泛化错误率低，易编码，可以应用在大部分分类器上，无参数调整</p>
 </li>
 <li><p>缺点：对离群点敏感</p>
@@ -437,7 +437,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="K—均值"><a href="#K—均值" class="headerlink" title="K—均值"></a>K—均值</h2><h3 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="算法五：K—均值"><a href="#算法五：K—均值" class="headerlink" title="算法五：K—均值"></a>算法五：K—均值</h2><h3 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h3><ul>
 <li><p>优点：容易实现</p>
 </li>
 <li><p>缺点：可能收敛到局部最小值，在大规模数据中收敛慢较慢</p>
@@ -649,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素贝叶斯"><span class="nav-number">2.</span> <span class="nav-text">朴素贝叶斯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想"><span class="nav-number">2.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件概率"><span class="nav-number">2.3.</span> <span class="nav-text">条件概率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AdaBoost"><span class="nav-number">3.</span> <span class="nav-text">AdaBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">3.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boosting"><span class="nav-number">3.2.</span> <span class="nav-text">boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自举汇聚法"><span class="nav-number">3.2.1.</span> <span class="nav-text">自举汇聚法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boosting-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">boosting</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adaboosting"><span class="nav-number">3.3.</span> <span class="nav-text">adaboosting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K—均值"><span class="nav-number">4.</span> <span class="nav-text">K—均值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-2"><span class="nav-number">4.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想-1"><span class="nav-number">4.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分k-均值"><span class="nav-number">4.3.</span> <span class="nav-text">二分k-均值</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法三：朴素贝叶斯"><span class="nav-number">2.</span> <span class="nav-text">算法三：朴素贝叶斯</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想"><span class="nav-number">2.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件概率"><span class="nav-number">2.3.</span> <span class="nav-text">条件概率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法四：AdaBoost"><span class="nav-number">3.</span> <span class="nav-text">算法四：AdaBoost</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">3.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boosting"><span class="nav-number">3.2.</span> <span class="nav-text">boosting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#自举汇聚法"><span class="nav-number">3.2.1.</span> <span class="nav-text">自举汇聚法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boosting-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">boosting</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#adaboosting"><span class="nav-number">3.3.</span> <span class="nav-text">adaboosting</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法五：K—均值"><span class="nav-number">4.</span> <span class="nav-text">算法五：K—均值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-2"><span class="nav-number">4.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想-1"><span class="nav-number">4.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分k-均值"><span class="nav-number">4.3.</span> <span class="nav-text">二分k-均值</span></a></li></ol></li></ol></div>
             
 
           </div>

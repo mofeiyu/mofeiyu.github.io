@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="标签 K-近邻算法 决策树  K-近邻算法特点 优点：精度高、对异常值不敏感、无数据输入假定  缺点：计算复杂度高、空间复杂度高  适用数据范围：数值型(连续)和标称型(离散)   算法思想 分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；  按照距离的大小进行排序，在m中选取距离最小的K个点；  确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签类别。">
+<meta name="description" content="标签 K-近邻算法 决策树  算法一：K-近邻算法特点 优点：精度高、对异常值不敏感、无数据输入假定  缺点：计算复杂度高、空间复杂度高  适用数据范围：数值型(连续)和标称型(离散)   算法思想 分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；  按照距离的大小进行排序，在m中选取距离最小的K个点；  确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习总结一">
 <meta property="og:url" content="mofeiyu.github.io/机器学习总结一/index.html">
 <meta property="og:site_name" content="mofeiyu">
-<meta property="og:description" content="标签 K-近邻算法 决策树  K-近邻算法特点 优点：精度高、对异常值不敏感、无数据输入假定  缺点：计算复杂度高、空间复杂度高  适用数据范围：数值型(连续)和标称型(离散)   算法思想 分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；  按照距离的大小进行排序，在m中选取距离最小的K个点；  确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签类别。">
-<meta property="og:updated_time" content="2017-10-23T16:17:30.000Z">
+<meta property="og:description" content="标签 K-近邻算法 决策树  算法一：K-近邻算法特点 优点：精度高、对异常值不敏感、无数据输入假定  缺点：计算复杂度高、空间复杂度高  适用数据范围：数值型(连续)和标称型(离散)   算法思想 分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；  按照距离的大小进行排序，在m中选取距离最小的K个点；  确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签">
+<meta property="og:updated_time" content="2017-10-26T15:30:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结一">
-<meta name="twitter:description" content="标签 K-近邻算法 决策树  K-近邻算法特点 优点：精度高、对异常值不敏感、无数据输入假定  缺点：计算复杂度高、空间复杂度高  适用数据范围：数值型(连续)和标称型(离散)   算法思想 分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；  按照距离的大小进行排序，在m中选取距离最小的K个点；  确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签类别。">
+<meta name="twitter:description" content="标签 K-近邻算法 决策树  算法一：K-近邻算法特点 优点：精度高、对异常值不敏感、无数据输入假定  缺点：计算复杂度高、空间复杂度高  适用数据范围：数值型(连续)和标称型(离散)   算法思想 分别计算待判断标签的数据$y^i$与m个已知标签的数据之间的距离；  按照距离的大小进行排序，在m中选取距离最小的K个点；  确定前K个点所在类别的出现频率，返回频率最高的类别作为$y^i$的预测标签">
 
 
 
@@ -327,10 +327,10 @@
 
       
         <h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
-<li><a href="#k-近邻算法">K-近邻算法</a></li>
-<li><a href="#决策树">决策树</a></li>
+<li><a href="#算法一：k-近邻算法">K-近邻算法</a></li>
+<li><a href="#算法二：决策树">决策树</a></li>
 </ul>
-<h2 id="K-近邻算法"><a href="#K-近邻算法" class="headerlink" title="K-近邻算法"></a>K-近邻算法</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="算法一：K-近邻算法"><a href="#算法一：K-近邻算法" class="headerlink" title="算法一：K-近邻算法"></a>算法一：K-近邻算法</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
 <li><p>优点：精度高、对异常值不敏感、无数据输入假定</p>
 </li>
 <li><p>缺点：计算复杂度高、空间复杂度高</p>
@@ -354,12 +354,12 @@
 </li>
 </ul>
 <h3 id="归一化特征值"><a href="#归一化特征值" class="headerlink" title="归一化特征值"></a>归一化特征值</h3><ul>
-<li><p>归一化至[0,1] $X = (X - min)/(max - min)$</p>
+<li><p>归一化至[0,1]: $ X = \frac{X - min}{max - min}$</p>
 </li>
-<li><p>归一化至[-1,1] $X = 2 * (X - min)/(max - min) - 1$</p>
+<li><p>归一化至[-1,1]: $ X = 2\frac{X - min}{max - min} - 1$</p>
 </li>
 </ul>
-<h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<h2 id="算法二：决策树"><a href="#算法二：决策树" class="headerlink" title="算法二：决策树"></a>算法二：决策树</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
 <li><p>优点：计算复杂度不高，对中间缺失值不敏感，可以处理不相关特征数字</p>
 </li>
 <li><p>缺点：可能会产生过度匹配问题</p>
@@ -582,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#K-近邻算法"><span class="nav-number">2.</span> <span class="nav-text">K-近邻算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想"><span class="nav-number">2.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#距离计算方法"><span class="nav-number">2.3.</span> <span class="nav-text">距离计算方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归一化特征值"><span class="nav-number">2.4.</span> <span class="nav-text">归一化特征值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树"><span class="nav-number">3.</span> <span class="nav-text">决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">3.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想-1"><span class="nav-number">3.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息增益"><span class="nav-number">3.3.</span> <span class="nav-text">信息增益</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#熵"><span class="nav-number">3.3.1.</span> <span class="nav-text">熵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息增益-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">信息增益</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法一：K-近邻算法"><span class="nav-number">2.</span> <span class="nav-text">算法一：K-近邻算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想"><span class="nav-number">2.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#距离计算方法"><span class="nav-number">2.3.</span> <span class="nav-text">距离计算方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归一化特征值"><span class="nav-number">2.4.</span> <span class="nav-text">归一化特征值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法二：决策树"><span class="nav-number">3.</span> <span class="nav-text">算法二：决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点-1"><span class="nav-number">3.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法思想-1"><span class="nav-number">3.2.</span> <span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息增益"><span class="nav-number">3.3.</span> <span class="nav-text">信息增益</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#熵"><span class="nav-number">3.3.1.</span> <span class="nav-text">熵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息增益-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">信息增益</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
