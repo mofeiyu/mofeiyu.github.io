@@ -91,7 +91,7 @@
 <meta property="og:url" content="mofeiyu.github.io/机器学习总结二/index.html">
 <meta property="og:site_name" content="mofeiyu">
 <meta property="og:description" content="标签 朴素贝叶斯 AdaBoost K—均值  朴素贝叶斯特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用3中数据计算待测样品(x,y)在各">
-<meta property="og:updated_time" content="2017-10-26T14:47:53.000Z">
+<meta property="og:updated_time" content="2017-10-26T15:19:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习总结二">
 <meta name="twitter:description" content="标签 朴素贝叶斯 AdaBoost K—均值  朴素贝叶斯特点 优点：在数据较少的情况仍有效，可以处理多分类问题  缺点：对输入数据的准备方式较为敏感  适用数据范围：标称型（且特征条件独立）   算法思想 记录训练集中各种类别的概率$P(C_i)$  记录训练集中出现的各个特征的各种特征值的占全部的概率  记录不同类别中各个特征的各种特征值在该类别的概率  利用3中数据计算待测样品(x,y)在各">
@@ -374,15 +374,15 @@
 <p>  P(红|大)：红球在大球中的概率；</p>
 <p>  P(大|红)：大球在红球中的概率；</p>
 <p>  P(红，大) ：即是大球又是红球在全部中的概率。</p>
-<p>  $$ P(大|红) = \frac{P(红，大)}{P(红)} $$</p>
-<p>  $$ P(红|大) = \frac{P(红，大)}{P(大)} $$</p>
+<p>  $$ P(大|红) = \frac{P(红,大)}{P(红)} $$</p>
+<p>  $$ P(红|大) = \frac{P(红,大)}{P(大)} $$</p>
 <p>  整理上二式则得出：$$ P(大|红) = \frac{P(红|大)P(大)}{P(红)} $$</p>
 </li>
 </ul>
 </li>
 <li><p>贝叶斯分类准则：</p>
 <p>  数据(x,y),需要预测其属于类别$C_i$中的哪一类。则每类概率可通过贝叶斯准则算出：</p>
-<p>  $ P(C_i|x,y) = \frac{P(x,y|C_i)P(C_i)}{P(x,y)} $</p>
+<p>  $$ P(C_i|x,y) = \frac{P(x,y|C_i)P(C_i)}{P(x,y)} $$</p>
 <p>  若$P(C_k|x,y)$满足 $P(C_k|x,y) &gt; P(C_m|x,y) (m ∈ i,m ≠ k)$ 那么数据(x,y)属于$C_k$这一类别</p>
 </li>
 </ul>
@@ -417,26 +417,21 @@
 <p>不同的boosting算法取决于其更改训练集数据权重方法，以及分类器权重的计算方法的不同。</p>
 <h3 id="adaboosting"><a href="#adaboosting" class="headerlink" title="adaboosting"></a>adaboosting</h3><p>adaboosting是boosting的一种。</p>
 <ul>
-<li><p>权重错误</p>
-<p>  $$ D_\varepsilon = Sum(D_i), i属于为训练集中被错分的样品的序号的集合$$</p>
+<li><p>权重错误: $ D_\varepsilon = Sum(D_i), i属于为训练集中被错分的样品的序号的集合$</p>
 </li>
 <li><p>分类器权重的计算方法</p>
 <ul>
-<li><p>错误率</p>
-<p>$$ \varepsilon = \frac{m_错}{m_总} $$</p>
+<li><p>错误率: $ \varepsilon = \frac{m_错}{m_总} $</p>
 </li>
-<li><p>分类器权重</p>
-<p>$$ \alpha = \frac{1}{2}ln(\frac{1-\varepsilon}{\varepsilon}) $$</p>
+<li><p>分类器权重: $ \alpha = \frac{1}{2}ln(\frac{1-\varepsilon}{\varepsilon}) $</p>
 </li>
 </ul>
 </li>
-<li><p>训练集数据更改方法</p>
+<li><p>训练集数据权重更改方法(第j+1次)</p>
 <ul>
-<li><p>被正确分类的样品</p>
-<p>$$D_i^{j+1} = \frac{D_i^{j}e^{-\alpha_j}}{Sum(D^j)}$$</p>
+<li><p>被正确分类的样品: $D_i^{j+1} = \frac{D_i^{j}e^{-\alpha_j}}{Sum(D^j)}$</p>
 </li>
-<li><p>被错误分类的样品</p>
-<p>$$D_i^{j+1} = \frac{D_i^{j}e^{\alpha_j}}{Sum(D^j)}$$</p>
+<li><p>被错误分类的样品: $D_i^{j+1} = \frac{D_i^{j}e^{\alpha_j}}{Sum(D^j)}$</p>
 </li>
 </ul>
 </li>
