@@ -84,20 +84,20 @@
 
 
 
-<meta name="description" content="本文主要介绍Google的一篇神作，Wide &amp;amp; Deep Learning for Recommender Systems">
+<meta name="description" content="本文主要介绍论文Network in Network(NIN)的思想，Network in Network">
 <meta name="keywords" content="DNN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Wide &amp; Deep">
-<meta property="og:url" content="mofeiyu.github.io/2017-12-02-wide&deep/index.html">
+<meta property="og:title" content="Network in Network">
+<meta property="og:url" content="mofeiyu.github.io/2017-12-15-nin/index.html">
 <meta property="og:site_name" content="mofeiyu">
-<meta property="og:description" content="本文主要介绍Google的一篇神作，Wide &amp;amp; Deep Learning for Recommender Systems">
+<meta property="og:description" content="本文主要介绍论文Network in Network(NIN)的思想，Network in Network">
 <meta property="og:image" content="/img/dl/wide-and-deep/Figure1.png">
 <meta property="og:image" content="/img/dl/wide-and-deep/Figure2.png">
 <meta property="og:image" content="/img/dl/wide-and-deep/Figure3.png">
-<meta property="og:updated_time" content="2017-12-15T03:51:19.000Z">
+<meta property="og:updated_time" content="2017-12-15T04:31:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wide &amp; Deep">
-<meta name="twitter:description" content="本文主要介绍Google的一篇神作，Wide &amp;amp; Deep Learning for Recommender Systems">
+<meta name="twitter:title" content="Network in Network">
+<meta name="twitter:description" content="本文主要介绍论文Network in Network(NIN)的思想，Network in Network">
 <meta name="twitter:image" content="/img/dl/wide-and-deep/Figure1.png">
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="mofeiyu.github.io/2017-12-02-wide&deep/"/>
+  <link rel="canonical" href="mofeiyu.github.io/2017-12-15-nin/"/>
 
 
 
 
 
-  <title> Wide & Deep | mofeiyu </title>
+  <title> Network in Network | mofeiyu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -245,7 +245,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="mofeiyu.github.io/2017-12-02-wide&deep/">
+  <link itemprop="mainEntityOfPage" href="mofeiyu.github.io/2017-12-15-nin/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="mofeiyu">
@@ -269,7 +269,7 @@
             
             
               
-                Wide & Deep
+                Network in Network
               
             
           </h1>
@@ -284,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-02T11:00:00+08:00">
-                2017-12-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-15T11:00:00+08:00">
+                2017-12-15
               </time>
             
 
@@ -325,8 +325,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017-12-02-wide&deep/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017-12-02-wide&deep/" itemprop="commentCount"></span>
+                <a href="/2017-12-15-nin/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017-12-15-nin/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -352,16 +352,14 @@
       
 
       
-        <p>本文主要介绍Google的一篇神作，<a href="https://arxiv.org/abs/1606.07792" target="_blank" rel="external">Wide &amp; Deep Learning for Recommender Systems</a></p>
+        <p>本文主要介绍论文Network in Network(NIN)的思想，<a href="https://arxiv.org/abs/1312.4400" target="_blank" rel="external">Network in Network</a></p>
 <a id="more"></a>
 <h1 id="1-Why"><a href="#1-Why" class="headerlink" title="1. Why"></a>1. Why</h1><ol>
-<li><p>传统线性模型：通过交叉特征获得记忆性，但是对于没有见过的特征，则表现比较差（泛化性差），泛化性则需要大量的特征工程。</p>
-<blockquote>
+<li><blockquote>
 <p>Generalized Linear Models: Memorization of feature interactions through a wide set of cross-product feature transformations are effective and interpretable, while generalization requires more feature engineering effort.</p>
 </blockquote>
 </li>
-<li><p>深度模型：无需太多的特征工程，通过高维的稀疏特征学习到低维稠密的embedding，从而获得泛化性。然而，由于user-item的交互很稀疏，深度模型很容易过拟合，从而推荐低相关性的item。</p>
-<blockquote>
+<li><blockquote>
 <p>With less feature engineering, deep neural networks can generalize better to unseen feature combinations through low-dimensional dense embeddings learned for the sparse features. However, deep neural networks with embeddings can over-generalize and recommend less relevant items when the user-item interactions are sparse and high-rank. </p>
 </blockquote>
 </li>
@@ -432,8 +430,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/机器学习总结二/" rel="next" title="机器学习总结二">
-                <i class="fa fa-chevron-left"></i> 机器学习总结二
+              <a href="/2017-12-02-wide&deep/" rel="next" title="Wide & Deep">
+                <i class="fa fa-chevron-left"></i> Wide & Deep
               </a>
             
           </div>
@@ -441,10 +439,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017-12-15-nin/" rel="prev" title="Network in Network">
-                Network in Network <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -710,9 +704,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'mofeiyu';
-      var disqus_identifier = '2017-12-02-wide&deep/';
+      var disqus_identifier = '2017-12-15-nin/';
 
-      var disqus_title = "Wide & Deep";
+      var disqus_title = "Network in Network";
 
 
       function run_disqus_script(disqus_script) {
