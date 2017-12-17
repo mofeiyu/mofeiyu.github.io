@@ -93,7 +93,7 @@
 <meta property="og:description" content="本文主要介绍一篇2014年论文Network In Network(NIN)的思想，Network in Network">
 <meta property="og:image" content="/img/dl/NIN/Figure1.jpg">
 <meta property="og:image" content="/img/dl/NIN/Figure2.jpg">
-<meta property="og:updated_time" content="2017-12-17T11:56:05.000Z">
+<meta property="og:updated_time" content="2017-12-17T13:16:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Network In Network">
 <meta name="twitter:description" content="本文主要介绍一篇2014年论文Network In Network(NIN)的思想，Network in Network">
@@ -372,6 +372,38 @@
 <blockquote>
 <p>In this paper, we propose another strategy called global average pooling to replace the traditional fully connected layers in CNN. The idea is to generate one feature map for each corresponding category of the classification task in the last mlpconv layer. Instead of adding fully connected layers on top of the feature maps, we take the average of each feature map, and the resulting vector is fed directly into the softmax layer. </p>
 </blockquote>
+<p>例子：<br>Input size： 32x32x128<br>Output size： 32x32x256</p>
+<pre>
+    <table>
+       <tr>
+          <td></td>
+          <td>过滤器</td>
+          <td>通道数</td>
+          <td>参数规模</td>
+          <td>总规模</td>
+       </tr>
+       <tr>
+          <td>线性卷积层</td>
+          <td>3x3</td>
+          <td>256</td>
+          <td>3x3x128x256+256</td>
+          <td>295k</td>
+       </tr>
+       <tr>
+          <td rowspan="2">多层感知卷积层</td>
+          <td>1x1</td>
+          <td>64</td>
+          <td>128x64 + 64</td>
+          <td rowspan="2">156k</td>
+       </tr>
+       <tr>
+          <td>3x3</td>
+          <td>256</td>
+          <td>3x3x64x256+256</td>
+       </tr>
+    </table>
+</pre>
+
 <h2 id="3-3-Network-In-Network-Structure"><a href="#3-3-Network-In-Network-Structure" class="headerlink" title="3.3. Network In Network Structure"></a>3.3. Network In Network Structure</h2><blockquote>
 <p>The overall structure of NIN is a stack of mlpconv layers, on top of which lie the global average pooling and the objective cost layer. Sub-sampling layers can be added in between the mlpconv 4 layers as in CNN and maxout networks. Figure 2 shows an NIN with three mlpconv layers. Within each mlpconv layer, there is a three-layer perceptron. The number of layers in both NIN and the micro networks is flexible and can be tuned for specific tasks. </p>
 </blockquote>
