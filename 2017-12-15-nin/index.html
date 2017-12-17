@@ -93,7 +93,7 @@
 <meta property="og:description" content="本文主要介绍一篇2014年论文Network In Network(NIN)的思想，Network in Network">
 <meta property="og:image" content="/img/dl/NIN/Figure1.jpg">
 <meta property="og:image" content="/img/dl/NIN/Figure2.jpg">
-<meta property="og:updated_time" content="2017-12-17T13:16:17.000Z">
+<meta property="og:updated_time" content="2017-12-17T13:18:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Network In Network">
 <meta name="twitter:description" content="本文主要介绍一篇2014年论文Network In Network(NIN)的思想，Network in Network">
@@ -368,10 +368,6 @@
 <blockquote>
 <p>$ f_{i,j,k_1}^1 = \max({w_k^1}^Tx_{i,j}+b_{k_1} ,0)$<br>$...$<br>$ f_{i,j,k_n}^n = \max({w_k^1}^Tf_{i,j}^{n-1}+b_{k_n} ,0)$</p>
 </blockquote>
-<h2 id="3-2-全局平均池化层-Global-Average-Pooling"><a href="#3-2-全局平均池化层-Global-Average-Pooling" class="headerlink" title="3.2. 全局平均池化层(Global Average Pooling)"></a>3.2. 全局平均池化层(Global Average Pooling)</h2><p>该文提出采用全局平均池化层替代传统CNN中的全连接层，对每个特征图一整张图片（即，一个滤波器计算出来的全部数据，也称一个通道的全部数据）进行全局均值池化，这样每张特征图都可以得到一个输出。在上述操作中不需要任何参数，故参数网络结构规模变小，避免过拟合。传统CNN用于多分类最后一层多采用全连接加上softmax，全局平均池化层直接让每张特征图输出输出类的特征。这要求在做1000个分类任务的时候，最后一层的前一层输出的特征图个数（即通道数）为1000。</p>
-<blockquote>
-<p>In this paper, we propose another strategy called global average pooling to replace the traditional fully connected layers in CNN. The idea is to generate one feature map for each corresponding category of the classification task in the last mlpconv layer. Instead of adding fully connected layers on top of the feature maps, we take the average of each feature map, and the resulting vector is fed directly into the softmax layer. </p>
-</blockquote>
 <p>例子：<br>Input size： 32x32x128<br>Output size： 32x32x256</p>
 <pre>
     <table>
@@ -404,6 +400,10 @@
     </table>
 </pre>
 
+<h2 id="3-2-全局平均池化层-Global-Average-Pooling"><a href="#3-2-全局平均池化层-Global-Average-Pooling" class="headerlink" title="3.2. 全局平均池化层(Global Average Pooling)"></a>3.2. 全局平均池化层(Global Average Pooling)</h2><p>该文提出采用全局平均池化层替代传统CNN中的全连接层，对每个特征图一整张图片（即，一个滤波器计算出来的全部数据，也称一个通道的全部数据）进行全局均值池化，这样每张特征图都可以得到一个输出。在上述操作中不需要任何参数，故参数网络结构规模变小，避免过拟合。传统CNN用于多分类最后一层多采用全连接加上softmax，全局平均池化层直接让每张特征图输出输出类的特征。这要求在做1000个分类任务的时候，最后一层的前一层输出的特征图个数（即通道数）为1000。</p>
+<blockquote>
+<p>In this paper, we propose another strategy called global average pooling to replace the traditional fully connected layers in CNN. The idea is to generate one feature map for each corresponding category of the classification task in the last mlpconv layer. Instead of adding fully connected layers on top of the feature maps, we take the average of each feature map, and the resulting vector is fed directly into the softmax layer. </p>
+</blockquote>
 <h2 id="3-3-Network-In-Network-Structure"><a href="#3-3-Network-In-Network-Structure" class="headerlink" title="3.3. Network In Network Structure"></a>3.3. Network In Network Structure</h2><blockquote>
 <p>The overall structure of NIN is a stack of mlpconv layers, on top of which lie the global average pooling and the objective cost layer. Sub-sampling layers can be added in between the mlpconv 4 layers as in CNN and maxout networks. Figure 2 shows an NIN with three mlpconv layers. Within each mlpconv layer, there is a three-layer perceptron. The number of layers in both NIN and the micro networks is flexible and can be tuned for specific tasks. </p>
 </blockquote>
